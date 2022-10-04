@@ -150,7 +150,7 @@ p{
     padding: 3em 0 7em 0;
     background-size: cover;
     color: rgba(255, 255, 255, 0.8);
-    text-align: center;
+    text-align: $text-align;
     margin-bottom: 10px;
 }
 .tete::before{
