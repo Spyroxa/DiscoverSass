@@ -1,0 +1,16 @@
+{
+  "name": "Discover-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "sass input.scss output.css",
+    "watch": "sass --watch input.scss output.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.54.9"
+  }
+}
