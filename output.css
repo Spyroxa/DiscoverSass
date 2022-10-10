@@ -91,7 +91,7 @@ header a {
   background-size: cover, cover;
 }
 
-.image.deux {
+.image.middle {
   background-image: url("https://html5up.net/uploads/demos/directive/images/pic02.jpg"), url("https://html5up.net/uploads/demos/directive/assets/css/images/overlay.png");
   opacity: 1, 0;
   background-size: contain;
@@ -104,7 +104,7 @@ header a {
   background-size: cover, cover;
 }
 
-.image.trois {
+.image.down {
   background-image: url("https://html5up.net/uploads/demos/directive/images/pic03.jpg"), url("https://html5up.net/uploads/demos/directive/assets/css/images/overlay.png");
   opacity: 1, 0;
   background-size: contain;
