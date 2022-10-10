@@ -1,7 +1,7 @@
-$primary-color:#6e6e6e;;
-$secondary-color:#ffffff;
-$third-color:#4eb980;
-$four-color:rgba(224, 224, 224, 0.75);
+$very-dark-gray:#6e6e6e;;
+$white:#ffffff;
+$lime-green:#4eb980;
+$white-gray:rgba(224, 224, 224, 0.75);
 $font-head:1em;
 $line-head:1.75em;
 $font-stack: 'Source Sans Pro', sans-serif;
@@ -10,7 +10,7 @@ $text-align: center;
 
     
 body{
-    color:$primary-color;
+    color:$very-dark-gray;
     font-family:$font-stack;
     padding: 0;
     margin: 0;
@@ -22,8 +22,8 @@ header a{
     text-decoration: underline dotted;
 }
 .logo{
-    background: $third-color;
-    color: $secondary-color;
+    background: $lime-green;
+    color: $white;
     cursor: default;
     display: inline-block;
     font-size: 1.5em;
@@ -32,16 +32,17 @@ header a{
     margin: 0 0 0.75em 0;
     text-align: $text-align;
     width: 2.35em;
+    z-index: 1;
 }
-.logo.deux a{
+.reseau a{
     cursor: pointer;
-    color: $secondary-color;
+    color: $white;
 }
-.logo.deux :hover{
+.reseau :hover{
     background: rgba(141, 215, 176, 0.6);
 }
-.logo.deux{
-    border: solid 1px $four-color;
+.logo.reseau{
+    border: solid 1px $white-gray;
     margin-top: 1.5em;
     margin-right: 0.25em;
     margin-left: 0.25em;
@@ -76,35 +77,36 @@ header a{
 }
 
 @mixin fond($image:url("https://html5up.net/uploads/demos/directive/images/pic01.jpg")) {
-    background-image: $image;
+    background-image: $image,url("https://html5up.net/uploads/demos/directive/assets/css/images/overlay.png");
+    opacity: 1,0;
     background-size: contain;
-    color: $secondary-color;
+    color: $white;
     display: inline-block;
     font-size: 5em;
     line-height: 2.35em;
     text-align: $text-align;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: no-repeat,no-repeat;
+    background-size: cover,cover;
 }
 .image{
     @include fond;
 }
 .image.deux{
-    @include fond($image:"https://html5up.net/uploads/demos/directive/images/pic01.jpg");
+    @include fond($image:url("https://html5up.net/uploads/demos/directive/images/pic02.jpg"));
 }
 .image.trois{
-    @include fond($image:"https://html5up.net/uploads/demos/directive/images/pic03.jpg");
+    @include fond($image:url("https://html5up.net/uploads/demos/directive/images/pic03.jpg"));
 }
 
 .image:hover{
-    filter:brightness(60%)
+    opacity: 0.6,0.8;
 }
 .image a:hover{
     font-size: 1.5em;
 }
 
 .image a{
-    color: $secondary-color;
+    color: $white;
 }
 @mixin flex($content:center) {
     display: flex;
@@ -123,7 +125,7 @@ h2{
     font-size: 1.25em;
     letter-spacing: 0.125em;
     line-height: $line-head;
-    color: $secondary-color;
+    color: $white;
     font-weight: 700;
     border-right-width: 0px;
     border-left-width: 0px;
@@ -141,7 +143,7 @@ p{
     line-height: $line-head;
     font-size: $font-head;
 }
-.tete{
+.head{
     @include flex;
     background-image: url("https://html5up.net/uploads/demos/directive/assets/css/images/top-1280.svg"), url("https://html5up.net/uploads/demos/directive/assets/css/images/overlay.png"), url("https://html5up.net/uploads/demos/directive/images/header.jpg");
     background-position: bottom center, top left, center center;
@@ -153,8 +155,8 @@ p{
     text-align: $text-align;
     margin-bottom: 10px;
 }
-.tete::before{
-    background: $four-color;
+.head::before{
+    background: $white-gray;
     content: '';
     left: 50%;
     position: absolute;
@@ -165,73 +167,70 @@ p{
     height: calc(100% - 20px);
     
 }
-.tete::after{
-    background: $four-color;
+.head::after{
+    background: $white-gray;
     content: '';
     left: 50%;
     position: absolute;
     width: 1px;
     z-index: 0;
 }
-.tete p br{
+.head p br{
     display: none;
 }
 .main{
     @include flex;
 }
 .main ::after{
-    background: $four-color;
+    background: $white-gray;
     content: '';
     left: 50%;
     position: absolute;
     width: 1px;
-    z-index: 0;
+    z-index: 1;
 }
 
 .container{
     @include flex($content:space-around);
-    background-color: $secondary-color;
-    border: solid 1px $four-color;
+    background-color: $white;
+    border: solid 1px $white-gray;
     margin-bottom: 15px;
     margin-top: 20px;
 }
 
-.un{
-    border-right-width: 0px;
-    border-left-width: 0px;
-}
 
-.texte{
+
+.c-texte{
     @include flex;
     text-align: $text-align;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
-.texte.trois{
+.c-texte.end{
     padding-left: 1em;
     padding-right: 1em;
-    border-top: solid 1px $four-color;
+    border-top: solid 1px $white-gray;
     margin-top: 30px;
 }
-.texte.trois::before{
-    background: $four-color;
+.svg::after{
+    background: $white-gray;
     content: '';
     display: block;
-    height: 1px;
-    left: 0;
+    height: calc(100% - 287px);
+    left: 50%;
     position: absolute;
-    width: 100%;
+    width: 1px;
 }
 footer{
-    background-color: $third-color;
+    background-color: $lime-green;
     text-align: $text-align;
-    color: $secondary-color;
+    color: $white;
 }
 .footer{
     @include flex;
     text-align: $text-align;
-    color: $secondary-color;
+    color: $white;
     margin-bottom: 20px;
 }
 .svg{
@@ -240,16 +239,7 @@ footer{
     background-size: cover;
     background-repeat: repeat-x;
 }
-.footer ::before{
-    background: $four-color;
-    content: '';
-    height: 100%;
-    left: 50%;
-    position: absolute;
-    top: 0;
-    width: 1px;
-    z-index: -1;
-}
+
 
 .name{
     margin-top: 5px;
@@ -261,7 +251,7 @@ footer{
     margin-bottom: 15px;
 }
 input[type="text"], input[type="email"],input[type="button"], select, textarea{
-    border: solid 1px $four-color;
+    border: solid 1px $white-gray;
     border-radius: 4px;
     height: 5vh;
     background-color: #4eb980;
@@ -271,7 +261,7 @@ textarea{
     padding: 0.5em 0.75em;
 }
 input[type="button"]{
-    color: $secondary-color;
+    color: $white;
     background: #544d55;
     cursor: pointer;
     font-size: 0.9em;
@@ -288,9 +278,9 @@ input[type="button"]:hover{
 }
 input[type="submit"]{
     width: 85%;
-    color: $third-color;
+    color: $lime-green;
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: $secondary-color;
+    background-color: $white;
     border-radius: 4px;
     height: 6vh;
     cursor: pointer;
@@ -308,11 +298,11 @@ textarea:active{
     background: rgba(141, 215, 176, 0.6);
 }
 .bouton:hover {
-    background-color: $third-color;
-    color: $secondary-color;
+    background-color: $lime-green;
+    color: $white;
   }
   
-.forme{
+.form{
     @include flex;
 }
 .copyright{
@@ -328,17 +318,47 @@ textarea:active{
     flex-direction: row;
     justify-content: center;
 }
-.logo.deux a{
+.reseau a{
     cursor: pointer;
-    color: $secondary-color;
+    color: $white;
     text-decoration: none;
 }
-.logo.deux :hover{
+.reseau :hover{
     background: rgba(141, 215, 176, 0.6);
 }
 
 /*font-family: 'Source Sans Pro', sans-serif*/
 @media screen and (min-width:700px){
+    .rw-60{
+        width: 60%;
+    }
+    .rw-55{
+        width: 55%;
+    }
+    .rw-57{
+        width: 57%;
+    }
+    .rw-100{
+        width: 100%;
+    }
+    .rwe-20{
+        width: 20.5em;
+    }
+    .rwe-41{
+        width: 41em;
+    }
+    .rhe-20{
+        height: 20em;
+    }
+    .rh-6{
+        height: 6vh;
+    }
+    .rh-30{
+        height: 30vh;
+    }
+    .rh-100{
+        height: 100vh;
+    }
     .logo{
         font-size: 2.25em;
     }
@@ -351,10 +371,10 @@ textarea:active{
     h1 br{
         display: block !important;
     }
-    .tete p br{
+    .head p br{
         display: block !important;
     }
-    .tete p{
+    .head p{
         font-size: 1.25em;
         margin-top: -20px;
         margin-bottom: 200px;
@@ -362,18 +382,17 @@ textarea:active{
     .container{
         flex-direction: row;
         margin: 0;
-        height: 20em;
-        width: 60%;
         border:0;
     }
-    .container.deux{
+    .container.row-r{
         flex-direction: row-reverse;
         text-align: end;
     }
-    .container.un.bis{
+    .container.border.bis{
         flex-direction: column;
+        margin-top: 5em;
     }
-    .container.un{
+    .container.border{
         border: solid 1px rgba(224, 224, 224, 0.75);
         border-left: 0;
         border-right: 0;
@@ -381,40 +400,34 @@ textarea:active{
     .container.o-1{
         margin-top: 40px;
     }
-    .texte{
-        width: 55%;
-    }
-    .image{
-        width: 57%;
-    }
-    .texte.un{
+    .c-texte.right{
         align-items: start;
         text-align: start;
         padding-left: 1em;
     }
-    .texte.deux{
+    .c-texte.left{
         align-items: end;
         text-align: end;
         padding-right: 1em;
     }
-    .texte.un p{
+    .c-texte.right p{
         padding-left: 2em;
     }
-    .texte.deux p{
+    .c-texte.left p{
         padding-right: 2em;
     }
-    .texte.deux h1{
+    .c-texte.left h1{
         padding-right: 1.25em;
     }
-    .texte.un h1{
+    .c-texte.right h1{
         padding-left: 1.25em;
     }
     h5{
         font-size: 1.35em;
     }
     footer{
-        padding-left: 1em;
-        padding-right: 1em;
+        padding-left: 0em;
+        padding-right: 0em;
     }
     .svg{
         margin-bottom: 60px;
@@ -422,14 +435,10 @@ textarea:active{
         background-repeat: no-repeat;
     }
     .name{
-        width: 20.5em;
-        height: 6vh;
         font-size: 13pt;
         margin-right: 5px;
     }
     .message{
-        width: 41em;
-        height: 30vh;
         margin-top: 25px;
         font-size: 13pt;
     }
@@ -441,14 +450,13 @@ textarea:active{
     }
     .copyright{
         flex-direction: row;
-        width: 100%;
         align-items: center;
         text-align: $text-align;
     }
     .copyright br{
         display: none;
     }
-    .tete::before{
+    .head::before{
         height: calc(100% - 25px);
     }
     .image a{
