@@ -21,6 +21,9 @@ header a{
     color: rgba(255, 255, 255, 0.8);
     text-decoration: underline dotted;
 }
+header a:hover{
+    color: #4eb980;
+}
 .logo{
     background: $lime-green;
     color: $white;

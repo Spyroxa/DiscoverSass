@@ -11,6 +11,10 @@ header a {
   text-decoration: underline dotted;
 }
 
+header a:hover {
+  color: #4eb980;
+}
+
 .logo {
   background: #4eb980;
   color: #ffffff;
